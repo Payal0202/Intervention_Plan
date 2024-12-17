@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervention Plan - Games</title>
+    <link rel="stylesheet" href="/static/styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Intervention Plan: Game Options</h1>
+        <div class="games-list">
+            <!-- Include index.html as the first game -->
+            <div class="game-card">
+                <h2>Counting Game</h2>
+                <a href="{{ url_for('CG') }}" class="game-link">Start Counting Game</a>
+            </div>
+
+            <div class="game-card">
+                <h2>Maze Game</h2>
+                <a href="{{ url_for('MG') }}" class="game-link">Start Maze Game</a>
+            </div>
+
+
+            <!-- Iterate through other games -->
+            {% for game in games %}
+                <div class="game-card">
+                    <h2>{{ game.name }}</h2>
+                    <a href="{{ url_for('game_details', game_id=game.id) }}" class="game-link">Start Game</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
