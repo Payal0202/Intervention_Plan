@@ -21,6 +21,16 @@
                 <a href="{{ url_for('MG') }}" class="game-link">Start Maze Game</a>
             </div>
 
+            <div class="game-card">
+                <h2>Color Game</h2>
+                <a href="https://payal0202.github.io/Color_Game/" class="game-link">Start Color Game</a>
+            </div>
+
+            <div class="game-card">
+                <h2>FlashCard Game</h2>
+                <a href="{{ url_for('FG') }}" class="game-link">Start FlashCard Game</a>
+            </div>
+
 
             <!-- Iterate through other games -->
             {% for game in games %}

@@ -24,6 +24,17 @@ def CG():
 def MG():
     return render_template('MG.html')
 
+@app.route('/FG')
+def FG():
+    return render_template('FG.html')
+
+@app.route('/flashcards', methods=['GET','POST'])
+def flashcards():
+    category = request.args.get('category')
+    # Add logic to handle the selected category
+    return render_template('flashcards.html', category=category)
+
+
 @app.route('/submit_score', methods=['POST'])
 def submit_score():
     try:
